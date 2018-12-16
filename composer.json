@@ -1,0 +1,13 @@
+{
+    "name": "geronimo794/php-simple-number-helpers",
+	"description": "Reformat number and date with php. Because time is numbers too.",
+	"license": "MIT",
+	"type": "helpers",
+	"version": "1.0.0",
+    "require": {
+		"php": "^5.6.37 || ^7.0" 
+	},
+	"autoload": {
+        "files": ["Numhelper.php"]
+    }
+}
