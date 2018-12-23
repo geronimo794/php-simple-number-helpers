@@ -51,3 +51,8 @@ if(!function_exists('format_rupiah')){
 		}
 	}
 }
+if(!function_exists('format_ribuan')){
+	function format_ribuan($value){
+		return number_format($value, 0, ',', '.');
+	}
+}
