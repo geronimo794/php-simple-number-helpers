@@ -33,6 +33,29 @@ if(!function_exists('reformat_front_display_date')){
 		return $date->format('j F Y');
 	}
 }
+if(!function_exists('reformat_tanggal_dengan_hari')){
+	function reformat_tanggal_dengan_hari($value){
+		$date = new DateTime($value);
+		$day = '';
+		switch($date->format('N')){
+			case '1': $day = 'Senin';
+			break;
+			case '2': $day = 'Selasa';
+			break;
+			case '3': $day = 'Rabu';
+			break;
+			case '4': $day = 'Kamis';
+			break;
+			case '5': $day = 'Jum\'at';
+			break;
+			case '6': $day = 'Sabtu';
+			break;
+			case '7': $day = 'Minggu';
+			break;
+		}
+		return $day.' - '.$date->format('j M y');
+	}
+}
 
 if(!function_exists('format_rupiah')){
 	function format_rupiah($value, $hide_zero = true){
