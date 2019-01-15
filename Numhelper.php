@@ -53,7 +53,7 @@ if(!function_exists('reformat_tanggal_dengan_hari')){
 			case '7': $day = 'Minggu';
 			break;
 		}
-		return $day.' - '.$date->format('j F y');
+		return $day.' - '.$date->format('j F Y');
 	}
 }
 
