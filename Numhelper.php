@@ -24,13 +24,19 @@ if(!function_exists('reformat_front_display_date_with_day_full_time')){
 			case '7': $day = 'Minggu';
 			break;
 		}
-			return $date->format('H').':'.$date->format('m').' / '.$day.' - '.$date->format('j M y');
+			return $date->format('H').':'.$date->format('i').' / '.$day.' - '.$date->format('j M y');
 	}
 }
 if(!function_exists('reformat_front_display_date')){
 	function reformat_front_display_date($value){
 		$date = new DateTime($value);
 		return $date->format('j F Y');
+	}
+}
+if(!function_exists('reformat_display_time')){
+	function reformat_display_time($value){
+		$date = new DateTime($value);
+		return $date->format('H').':'.$date->format('i');
 	}
 }
 if(!function_exists('reformat_tanggal_dengan_hari')){
