@@ -5,26 +5,30 @@ if(!function_exists('remove_thousand_separator')){
     }
 }
 if(!function_exists('reformat_front_display_date_with_day_full_time')){
-	function reformat_front_display_date_with_day_full_time($value){
-		$date = new DateTime($value);
-		$day = '';
-		switch($date->format('N')){
-			case '1': $day = 'Senin';
-			break;
-			case '2': $day = 'Selasa';
-			break;
-			case '3': $day = 'Rabu';
-			break;
-			case '4': $day = 'Kamis';
-			break;
-			case '5': $day = 'Jum\'at';
-			break;
-			case '6': $day = 'Sabtu';
-			break;
-			case '7': $day = 'Minggu';
-			break;
-		}
+	function reformat_front_display_date_with_day_full_time($value = 0){
+		if(empty($value)){
+			return '';
+		}else{
+			$date = new DateTime($value);
+			$day = '';
+			switch($date->format('N')){
+				case '1': $day = 'Senin';
+				break;
+				case '2': $day = 'Selasa';
+				break;
+				case '3': $day = 'Rabu';
+				break;
+				case '4': $day = 'Kamis';
+				break;
+				case '5': $day = 'Jum\'at';
+				break;
+				case '6': $day = 'Sabtu';
+				break;
+				case '7': $day = 'Minggu';
+				break;
+			}
 			return $date->format('H').':'.$date->format('i').' / '.$day.' - '.$date->format('j M y');
+		}
 	}
 }
 if(!function_exists('reformat_front_display_date')){
