@@ -97,6 +97,7 @@ if(!function_exists('format_ribuan')){
 * @author Mogilev Arseny
 */ 
 function format_bytes($bytes, $precision = 1) { 
+    $result = 0;
     $bytes = floatval($bytes);
         $arBytes = array(
             0 => array(
